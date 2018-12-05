@@ -52,19 +52,8 @@
     <None Include="aes-kernel.cl">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="test.txtencrypted">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="test.txtencrypteddecrypted">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include=".gitignore">
       <Filter>Resource Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="test.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
   </ItemGroup>
 </Project>

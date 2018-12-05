@@ -13,15 +13,27 @@
 #include "OCLEncrypt.h"
 
 int main(int argc, char* argv[]) {
+	std::vector<std::pair<std::string, std::string>> flags;
 
-    // TODO: Impliment argment checking later - Hardcode for now
-    //if( argc < 3 )
-    //   printUsage(argc, argv);
-    std::string file = "./test.txt";
-	OCLEncrypt device{file};
+	if (argc < 2) {
+		printUsage(argc, argv);
+		exit(-1);
+	}
+	else
+		flags = parseCommandLine(argc, argv);
+
+	OCLEncrypt device;
+	std::vector<std::string> unrecognized = device.setOptions(flags);
+	if (unrecognized.size() != 0)
+	{
+		std::cerr << "Unrecognized Flags: ";
+		for (std::string flag : unrecognized)
+			std::cerr << flag << " ";
+		std::cerr << std::endl;
+		exit(-1);
+	}
 	
-	device.encryptFile();
-	device.decryptFile();
+	device.execute();
 
     return 0;
 }

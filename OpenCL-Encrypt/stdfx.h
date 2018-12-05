@@ -17,6 +17,8 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <sstream>
+#include <algorithm>
 
 #include <CL\opencl.h>
 

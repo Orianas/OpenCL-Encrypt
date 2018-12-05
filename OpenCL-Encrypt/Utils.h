@@ -13,3 +13,7 @@
 #include "stdfx.h"
 
 void printUsage(int argc, char* argv[]);
+std::vector<std::pair<std::string, std::string>> parseCommandLine(int argc, char* argv[]);
+std::pair<std::string, std::string> parseSingleOption(int argc, char* argv[], int index, std::string flag);
+std::pair<std::string, std::string> parseDoubleOption(int argc, char* argv[], int index, std::string flag);
+std::pair<std::string, std::string> parseModalOption(int argc, char* argv[], int index, std::string flag);
